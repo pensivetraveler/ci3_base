@@ -62,7 +62,7 @@ class MY_Input extends CI_Input
 //     * @param $httponly
 //     * @return void
 //     */
-//    public function set_cookie($name = '', $value = '', $expire = '', $domain = '', $path = '/', $prefix = '', $secure = false, $httponly = false, $samesite = NULL)
+//	public function set_cookie($name, $value = '', $expire = 0, $domain = '', $path = '/', $prefix = '', $secure = NULL, $httponly = NULL, $samesite = NULL)
 //    {
 //        if (PHP_VERSION_ID < 70300) {
 //            // PHP 7.3 이전 버전에서는 헤더에 직접 SameSite 속성을 추가
