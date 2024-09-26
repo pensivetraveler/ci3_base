@@ -135,7 +135,7 @@ $autoload['language'] = array();
 |	$autoload['model'] = array('first_model' => 'first');
 */
 if(getenv('DB_PORT')) {
-	$autoload['model'] = array('Model_User', 'Model_File', 'Model_User_Token', 'Model_Sys_Cfg', 'Model_Sys_Code');
+	$autoload['model'] = array('Model_File', 'Model_Sys_Cfg', 'Model_Sys_Code');
 }else{
 	$autoload['model'] = array();
 }
