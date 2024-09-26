@@ -629,7 +629,7 @@ class MY_Controller_API extends RestController
         $this->identifier = $model->identifier;
         $this->fileList = $model->fileList;
 
-        if(count([...$model->notNullList, ...$model->nullList]) !== count([...$model->strList, ...$model->intList, ...$model->fileList])){
+		if(count([...$model->primaryKeyList, ...$model->notNullList, ...$model->nullList]) !== count([...$model->strList, ...$model->intList, ...$model->fileList])){
             $this->response([
                 'code' => MODEL_DATA_NOT_COINCIDENCE,
                 'errors' => [
