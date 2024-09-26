@@ -2,7 +2,7 @@
 
 require_once __DIR__.'/Common.php';
 
-class Index extends \web\Common
+class Index extends Common
 {
 	public function index()
 	{

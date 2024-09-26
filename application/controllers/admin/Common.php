@@ -6,4 +6,9 @@ class Common extends MY_Controller_ADM
 	{
 		parent::__construct();
 	}
+
+//	function index()
+//	{
+//		$this->load->view('welcome_message');
+//	}
 }

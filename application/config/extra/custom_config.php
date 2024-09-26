@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$config['extra_config_loaded'] = true;
+$config['custom_config_loaded'] = true;
 
 /*
 |--------------------------------------------------------------------------

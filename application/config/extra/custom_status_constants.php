@@ -1,4 +1,6 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
 const DATA_PROCESSED = 2000;
 const DATA_RETRIEVED = 2001;
 const DATA_AVAILABLE = 2002;

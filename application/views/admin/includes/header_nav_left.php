@@ -1,6 +1,6 @@
 <ul class="menu-inner py-1">
 	<?php
-		foreach ($this->config->get('admin_menu', $this->config->get('admin_menu_default', [])) as $menuName=>$menu):
+		foreach ($this->config->get('admin_menu_side', $this->config->get('admin_menu_side_default', [])) as $menuName=>$menu):
 			if(is_admin_active_page($menu)) $menu['className'][] = 'active';
 			$subMenuExist = count($menu['subMenu']) > 0;
 			$href = $menu['route'] ? $menu['route'] . '?' . http_build_query($menu['params']) : '';

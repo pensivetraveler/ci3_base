@@ -1,4 +1,6 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
 // Note: Only the widely used HTTP status codes are documented
 
 // Informational

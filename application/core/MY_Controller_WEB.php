@@ -83,6 +83,12 @@ class MY_Controller_WEB extends MY_Controller
         }
     }
 
+	protected function auth(): bool
+	{
+		return true;
+	}
+
+
 	protected function setTitleList($data = [])
 	{
 		$this->titleList = $data;

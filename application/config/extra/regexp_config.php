@@ -1,4 +1,8 @@
 <?php
+defined('BASEPATH') or exit('No direct script access allowed');
+
+$config['regexp_config_loaded'] = true;
+
 $config['regexp'] = [
     'numeric' => [
         'exp' => "^[\-+]?[0-9]*\.?[0-9]+$",
