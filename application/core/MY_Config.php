@@ -10,7 +10,15 @@ class MY_Config extends CI_Config
 
     public function get($item, $default = null)
     {
-        return $this->item($item) === null?$default:$this->item($item);
+		if($this->item($item) === null) {
+			return $default;
+		}else{
+			if(empty($this->item($item))) {
+				return $default === null ? $this->item($item) : $default;
+			}else{
+				return $this->item($item);
+			}
+		}
     }
 
     // Config 값을 가져오는 메서드 추가
