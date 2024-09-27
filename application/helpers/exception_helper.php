@@ -108,33 +108,45 @@ if ( ! function_exists('get_error_views_path'))
 
 if ( ! function_exists('get_error_response'))
 {
-    function get_error_response($preset, $error): array
-    {
-        if(get_path() === 'api') {
-            $response = [
-                'errorCode' => $preset['code'],
-                'errorMessage' => $preset['msg'],
-                'errorBody' => [
-                    'Type' => addslashes($error['type']),
-                    'Message' => addslashes($error['msg']),
-                    'Filename' => $error['location']??null,
-                    'Line Number' => $error['line']??null,
-                ],
-            ];
-        }else{
-            $response = array_merge($preset, [
-                'errors' => [[
-                    'location' => $error['location']??null,
-                    'param' => null,
-                    'value' => $error['line']??null,
-                    'type' => addslashes($error['type']),
-                    'msg' => addslashes($error['msg']),
-                ]]
-            ]);
-        }
+	if ( ! function_exists('get_error_response'))
+	{
+		function get_error_response($preset, $error): array
+		{
+			$msg = null;
+			if(isset($error['msg'])) {
+				if(is_array($error['msg'])) {
+					$msg = $error['msg'];
+				}else{
+					$msg = addslashes($error['msg']);
+				}
+			}
 
-        return $response;
-    }
+			if(get_path() === 'api') {
+				$response = [
+					'errorCode' => $preset['code'],
+					'errorMessage' => $preset['msg'],
+					'errorBody' => [
+						'Type' => addslashes($error['type']),
+						'Message' => $msg,
+						'Filename' => $error['location']??null,
+						'Line Number' => $error['line']??null,
+					],
+				];
+			}else{
+				$response = array_merge($preset, [
+					'errors' => [[
+						'location' => $error['location']??null,
+						'param' => null,
+						'value' => $error['line']??null,
+						'type' => addslashes($error['type']),
+						'msg' => $msg,
+					]]
+				]);
+			}
+
+			return $response;
+		}
+	}
 }
 
 if ( ! function_exists('filename_to_classname'))
