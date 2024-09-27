@@ -30,8 +30,6 @@ class MY_Controller_WEB extends MY_Controller
 
 		$this->load->helper('html');
 
-//        if($this->router->class === 'common') redirect('/welcome');
-
 		$this->load->library('Authorization_token', ['config' => 'extra/jwt_config']);
 		$this->load->library('pagination');
 		$this->load->helper('html');
