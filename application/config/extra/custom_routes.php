@@ -1,21 +1,23 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$route['default_controller'] = 'admin/index';
-$route['except_folders'] = ['app', 'adm', 'admin', 'module'];
+$route['default_controller'] = 'web/index';
+$route['except_folders'] = ['app', 'api', 'adm', 'admin', 'module'];
+$route['(?!app|api|adm|admin|module).*'] = 'web/$0';
 
 /*
 |--------------------------------------------------------------------------
 | WEB
 |--------------------------------------------------------------------------
 */
-$route['^(?!app|api|adm|admin|module).*'] = 'web/$0';
+$route['web'] = 'web/index';
 
 /*
 |--------------------------------------------------------------------------
 | ADMIN
 |--------------------------------------------------------------------------
 */
+$route['admin'] = 'admin/index';
 
 /*
 |--------------------------------------------------------------------------
