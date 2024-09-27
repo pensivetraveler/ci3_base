@@ -5,10 +5,16 @@ class Common extends MY_Controller_ADM
 	function __construct()
 	{
 		parent::__construct();
+
+		$this->defaultController = 'dashboard';
 	}
 
-//	function index()
-//	{
-//		$this->load->view('welcome_message');
-//	}
+	public function index()
+	{
+		if($this->defaultController) {
+			redirect("/".get_path()."/".$this->defaultController);
+		}else{
+			$this->load->view('welcome_message');
+		}
+	}
 }
