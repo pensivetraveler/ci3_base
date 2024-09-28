@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+
 /**
  * TODO costom_constant 이후에 admin_constant가 선언될 수 있도록 조정이 필요. get_path method 이용해서 admin 관련 common class 에서 관련 helper, config, const를 별도 로드할 수 있도록 하는 것도 좋을 것으로 보임.
  * const 파일의 경우 아래와 같이 로드 가능
